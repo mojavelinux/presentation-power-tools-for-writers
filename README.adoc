@@ -1,0 +1,61 @@
+= Power Tools for Writers
+Guillaume Scheibel; Dan Allen <http://opendevise.io>
+:track: Agility, Methodology & Tests
+
+[abstract]
+--
+//tag::abstract[]
+Coding and writing are alike in many ways.
+They're both forged by carefully weaving structure and creativity.
+Both go through many revisions on the journey towards quality.
+
+As developers, you use tools to code like a demigod.
+Writers deserve awesome tools too.
+We'll tap into the Asciidoctor ecosystem and show you many of the awesome tools that are available to you.
+
+* Effective collaboration using git and GitHub
+* Instant Preview using browser extensions
+* Powerful Editing using the Atom extension
+* Easy blogging with HubPress.io
+* Simple slide creation using the reveal.js converter
+* Seamless build integration using the Gradle plugin
+* Painless diagrams & charts using Asciidoctor Diagram
+* Slick API documentation using Asciidoclet and/or Swagger
+* Supercharged content management (e.g, Confluence) using Asciidoctor Publisher
+
+Using these tools, you can write like a demigod too.
+//end::abstract[]
+--
+
+////
+== View online
+
+...[Video]
+&middot;
+http://mojavelinux.github.io/presentation-power-tools-for-writers/index.html[Slides]
+&middot;
+http://mojavelinux.github.io/presentation-power-tools-for-writers/transcript.html[Transcript]
+////
+
+== View locally
+
+This deck is a http://markdalgleish.com/projects/bespoke.js[Bespoke.js] presentation.
+To run it, first ensure you have the following installed:
+
+. http://nodejs.org[Node.js]
+. http://bower.io[Bower]:
+
+ $ npm install -g bower
+
+. http://gulpjs.com[Gulp]:
+
+ $ npm install -g gulp
+
+Then, install dependencies and run the preview server:
+
+```bash
+$ npm install && bower install
+$ gulp serve
+```
+
+Finally, visit \http://localhost:8080 in your browser.

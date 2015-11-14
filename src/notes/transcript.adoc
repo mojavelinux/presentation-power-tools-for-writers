@@ -1,0 +1,20 @@
+= Power Tools for Writers
+:docinfo: private-head
+:nofooter:
+:icons: font
+ifdef::env-browser[:toc: macro]
+
+ifdef::backend-pdf[]
+[abstract]
+--
+include::../../README.adoc[tag=abstract]
+--
+
+<<<
+endif::[]
+
+ifeval::["{toc-placement}" == "macro"]
+toc::[]
+endif::[]
+
+...

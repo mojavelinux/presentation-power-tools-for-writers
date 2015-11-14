@@ -1,0 +1,78 @@
+use the demos to make the point about why the tool exists; why it's needed; what purpose it serves / need it fills
+
+* Writers need tools too
+* Let's not leap right to WYSIWYG; that's uninspired thinking (we're going to present some better approaches)
+* What tools do writers really need?
+* What gets in their way?
+* What would remove obstacles that they have?
+* One way to approach the problem is relating writing to coding
+* *Collaboration* is critical for writers, even more so than coding
+* *Versioning* is a critical component of collaboration
+* Versioning allows you to revise with confidence
+* Versioning allows you to audit changes
+* Merging conflicts in writing is much more difficult than merging conflicts in code
+* After you merge conflicting changes to a document, you have to reread it all to see if it still flows
+* *“Code review”* is just as important, if not more so for content edits
+* Editing is only the beginning of a content change; the change needs to be published; go through the publishing workflow
+* Professional styling (typography, colors, layout and other design) can transform words and other types of content
+* Motivation is a major factor in writing; tools should inspire writers to write
+* Build confidence by showing a preview of how the writing will look when published
+* Use icons and other devices to make writing fun; can be easily purged from final version
+* When writers are writing, they shouldn't be worried about formatting and in some cases structure or organization
+* Writing can be intimidating
+* Writing documentation is often a long and painful process
+* Documentation often gets shortchanged
+* *Documentation (and the documentation source) needs to be a bridge to the project developers / leaders*
+* Make documentation something of value
+* Reward the writer
+* *Simplify publishing*
+* Little improvements each day become big improvements over a long period
+* Panes and content summaries like a TOC to visualize the content while working on it
+* Documentation should not be tied to a format or style
+* Portable content
+* *Separate content and presentation* (MVC pattern)
+* Mobile first!
+* Move the content to where it can be shared and in a format conducive to collaborating
+* Treat all content this way (slides, API docs, etc), not just documentation / manuals
+* GitHub has a very powerful diff feature that presents both a source diff view and a rich diff view
+* Put the documentation next to the code (in the same git repo) or in a parallel git repo; benefits/drawbacks to each approach
+* What makes a good writer's IDE? see http://wolandscat.net/2015/10/28/an-asciidoctor-ide-wish-list/
+* Many tools are going to be needed, so Asciidoctor runs on many platforms (Ruby, JVM, JavaScript/Browser, Node, etc)
+* Publishing is sometimes messy; need to move a lot of things around; a good build tool like Gradle can rise to the challenge
+* Plain text can be used to generate diagrams as well; not always the right solution, but has potential to save time
+* Content should be readable in raw form (simple criteria we use for source code)
+* The language must be extensible to conform to the world around us; new frontiers
+* *Give documentation the same treatment and respect as code*
+* *Automate!!*
+* Approachable (more important than readable)
+* Metadata (to enable things like the reveal.js output)
+
+== Narrative
+
+* The first thing you'll want to do is preview your work => Browser extensions
+* As you get into writing, you'll also want some assistance with the source => IDE (Atom, Brackets); these also provide built-in live preview
+* Next, you'll want to share your work; can push to GitHub for basic preview or use docgist to get a more complete result
+* If you want the AsciiDoc to be part of a website, then look at static site generators like Jekyll, JAQ, Awestruct, Middleman, etc; mention that asciidoctor.org website using Awestruct + AsciiDoc
+* When you make a change, all you should have to do is push to git and the publishing pipline from there is automatic; git-based publishing workflow
+* If you want to integrate the writing directly into a software build (e.g., user manual), then you'll want to look at the build tool plugins => Gradle, Maven, etc
+* You can also use AsciiDoc to document your API => Asciidoclet, swagger2markup, Spring RESTdocs
+* If you want to create a blog, it makes sense to use a more dedicated tool like HubPress.io
+* Diagrams are code tool; create and store diagrams in plain text and have them automatically generate the diagram images using Asciidoctor Diagram
+* Produce EPUB3 and PDF output using Asciidoctor PDF
+* When you want to customize the output, you'll want to look at converters or other extensions
+* Create presentations using AsciiDoc to HTML5 slideshow converters => Bespoke.js, reveal.js
+
+//^
+
+.Summary
+* Browser extensions (Chrome, Firefox) for à la carte preview
+* IDE extensions to provide “IDE for writers” (Atom, Brackets, AsciidocFx, IntelliJ)
+* GitHub for simple publishing; Docgist to get proper rendering
+* Static site generator to manage an AsciiDoc-based content site (Jekyll, Awestruct, Middleman)
+* Build tool plugins to integrate documentation directly into a software project (Gradle, Maven)
+* AsciiDoc in API docs using Asciidoclet, swagger2markup or Spring RESTdocs
+* To specifically create a blog, use HubPress.io
+* Create and store diagrams as code using Asciidoctor Diagram
+* Produce EPUB3 and PDF using Asciidoctor PDF
+* Customize the output using a custom converter or other extensions
+* Create a Bespoke.js or Reveal.js presentation using AsciiDoc to HTML5 slideshow converters
