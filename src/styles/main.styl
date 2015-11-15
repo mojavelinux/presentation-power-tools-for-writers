@@ -2,12 +2,54 @@
 @import 'normalizecss/normalize.css'
 @import './bespoke-base'
 
+$color-white-0 = #fff
+$color-white-1 = #eee
+$color-black-0 = #000
+$color-black-1 = #2b2b2b
+$color-cyan-1 = #71ebf4
+$color-pink-1 = #ff5e99
+
 body
   font-size: 16px
 
 article.deck
-  color: rgba(0, 0, 0, 0.8)
-  background-color: #000
+  font-family: "Lato", sans-serif
+  //font-size: 2.25rem
+  color: $color-white-1
+  background-color: $color-black-0
 
 section
-  background-color: #fff
+  background-color: $color-black-1
+  h1, h2
+    font-size: 3rem
+    font-weight: 900
+    text-align: center
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.2)
+  &.title
+    background-image: url(../images/monk-writing.jpg)
+    background-size: cover
+    background-repeat: no-repeat
+    h1
+      color: $color-cyan-1
+  &.poster
+    &:not(.invert)
+      background-color: $color-black-0
+    > img
+      max-width: 100%
+      max-height: 100%
+    // fix scaling in Firefox
+    display: block
+    > img
+      position: relative
+      top: 50%
+      left: 50%
+      transform: translateX(-50%) translateY(-50%)
+
+p.author
+  font-weight: 300
+  margin: 0
+
+::selection
+  color: $color-white-0
+  background-color: $color-pink-1
+  text-shadow: none
