@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Power Tools for Writers</title>
+    <link rel="stylesheet" href="build/build.css">
+  </head>
+  <body>
+    <article class="deck">
+      <section class="title">
+        <h1>Power Tools for Writers</h1>
+        <p class="author">Guillaume Scheibel &middot; Dan Allen</p>
+      </section>
+      <section>
+        <h2 class="fragment">W.Y.S.I.W.Y.G ?</h2>
+        <!--p.small What You See Is What You Get-->
+        <p class="fragment small">You Get What You Get :/</p>
+      </section>
+      <!--section-->
+      <!--  h2 Y.G.W.Y.G-->
+      <!--  p.small You Get What You Get-->
+      <section>
+        <h2>Docs <em>=</em> Code!</h2>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>= Write Without Pain
+Author Name &lt;author@example.org&gt;
+
+A paragraph is just a paragraph.
+No pain involved.
+
+== Belgium in a nutshell
+
+* Beer
+* Chocolate
+* http://devoxx.be[Devoxx]</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>= Document Code Without Pain
+Author Name &lt;author@example.org&gt;
+
+Code is a first-class citizen!
+
+[source,groovy]
+----
+println "AsciiDoc is code friendly!"
+----
+
+TIP: Use the include directive to insert tested code.</code></pre>
+      </section>
+      <!--FIXME make this an axis slide-->
+      <section style="flex-direction: row">
+        <div style="padding: 0 1.5em; border-right: 1px solid #eee" class="left">
+          <h2>Content</h2>
+        </div>
+        <div style="padding: 0 1.5em" class="right">
+          <h2>Presentation</h2>
+        </div>
+      </section>
+      <section>
+        <h2>Write in AsciiDoc, publish everywhere</h2>
+        <!--h2 Write once, publish everywhere-->
+      </section>
+      <section>
+        <table class="fragment">
+          <tbody>
+            <tr>
+              <td>
+                <div class="fragment shield"><span class="icon"><i class="fa fa-eye"></i></span><span class="text">read</span></div>
+              </td>
+              <td>
+                <div class="fragment shield"><span class="icon"><i class="fa fa-keyboard-o"></i></span><span class="text">write</span></div>
+              </td>
+              <td>
+                <div class="fragment shield"><span class="icon"><i class="fa fa-git"></i></span><span class="text">version</span></div>
+              </td>
+              <td>
+                <div class="fragment shield"><span class="icon"><i class="fa fa-share-square-o"></i></span><span class="text">share</span></div>
+              </td>
+              <td>
+                <div class="fragment shield"><span class="icon"><i class="fa fa-flask"></i></span><span class="text">publish</span></div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!--section-->
+      <!--  ul(style='list-style: none; padding: 0; margin: 0')-->
+      <!--    li <i class="fa fa-eye"></i> Read-->
+      <!--    li <i class="fa fa-keyboard-o"></i> Edit-->
+      <!--    li <i class="fa fa-git"></i> Version-->
+      <!--    li <i class="fa fa-share-square-o"></i> Collaborate-->
+      <!--    li <i class="fa fa-flask"></i> Publish-->
+      <section>
+        <h2>Preview à la carte</h2>
+      </section>
+      <section class="poster"><img src="images/asciidoctor-chrome-extension-install.png"></section>
+      <section class="poster"><img src="images/asciidoctor-chrome-extension.png"></section>
+      <section>
+        <h2>Sharing</h2>
+      </section>
+      <section class="poster"><img src="images/docgist-screenshot.png"></section>
+      <section>
+        <h2>IDE for writers</h2>
+      </section>
+      <section>
+        <ul style="list-style: none; padding: 0; margin: 0; font-size: 1.5em; line-height: 2; font-weight: 300; text-align: right">
+          <!-- TODO use chared path here-->
+          <li class="fragment">Live preview with scroll sync</li>
+          <li class="fragment">Outline view</li>
+          <li class="fragment">Code assist</li>
+          <li class="fragment">Code templates</li>
+          <li class="fragment">Shortcuts for conversion</li>
+          <li class="fragment">Shortcuts for publishing</li>
+          <li class="fragment">Inbound conversion</li>
+        </ul>
+      </section>
+      <!--section.poster-->
+      <!--  a(href='http://asciidocfx.com', target='_blank'): img(src='images/asciidocfx.png')-->
+      <section class="poster"><a href="http://asciidocfx.com" target="_blank"><img src="images/asciidocfx-screenshot-jhipster.png"></a></section>
+      <section class="poster"><img src="images/atom-screenshot-jhipster.png"></section>
+      <section class="poster"><img src="images/atom-autocomplete.png"></section>
+      <section>
+        <h2>Push to publish</h2>
+      </section>
+      <section>
+        <h2>VCS <i class="fa fa-arrow-right"></i> CI <i class="fa fa-arrow-right"></i> Live</h2>
+      </section>
+      <!-- TODO use reflection here-->
+      <section>
+        <h2>git <i class="fa fa-arrow-right"></i> Travis CI <i class="fa fa-arrow-right"></i> gh-pages</h2>
+        <!-- could also deploy to publishing platform-->
+      </section>
+      <section>
+        <h2 class="subject">Docs review</h2>
+        <h2 class="reflect">Code review</h2>
+      </section>
+      <section class="poster"><img src="images/fork-and-fix.png"></section>
+      <section class="poster"><img src="images/code-diff.png"></section>
+      <section class="poster"><img src="images/rich-diff.png"></section>
+      <section>
+        <h2>Code into docs via tests</h2>
+      </section>
+      <section class="listing">
+        <pre class="language-groovy"><code>void testGString() {
+  // tag::gstring_1[]
+  def name = 'Guillaume' // a plain string
+  def greeting = "Hello ${name}"
+  
+  assert greeting.toString() == 'Hello Guillaume'
+  // end::gstring_1[]
+}</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>Here, we have a string with a placeholder referencing a local variable:
+
+[source,groovy,indent=0]
+----
+include::{projectdir}/src/spec/test/SyntaxTest.groovy[tag=gstring_1]
+----</code></pre>
+      </section>
+      <section class="poster"><img src="images/groovy-example.png"></section>
+      <section>
+        <h2>D.R.Y. with macros</h2>
+        <p class="small">Good AsciiDoc is concise AsciiDoc</p>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>[source,java]
+----
+include::{srcdir}/com/example/domain/Person.java[tag=set_name]
+----</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>source::com.example.domain.Person.java[]</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>:source-imports: com.example.domain
+
+source::Person.java[]</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>:source-imports: com.example.domain
+
+source::Person#setName(String).java[]</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>:source-imports: com.example.domain
+
+source::Person#setName(String).java[opts="+apidoc,-line-comments"]</code></pre>
+      </section>
+      <section>
+        <h2>Spring REST Docs</h2>
+        <p class="small">Accurate & readable documentation for RESTful services</p>
+        <!-- intended to be an easy-to-read user guide, akin to GitHub's API documentation for example, rather than the fully automated, dense API documentation produced by tools like Swagger-->
+      </section>
+      <section class="listing">
+        <pre class="language-java"><code>@Test
+public void headersExample() throws Exception {
+  this.document.snippets(responseHeaders(
+      headerWithName("Content-Type")
+          .description("The payload MIME type")));
+  this.mockMvc.perform(get("/")).andExpect(status().isOk());
+}</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-asciidoc"><code>[[overview-headers]]
+== Headers
+
+Every response has the following header(s):
+
+include::{snippets}/headers-example/response-headers.adoc[] </code></pre>
+      </section>
+      <section>
+        <h2>Asciidoclet</h2>
+        <p class="small">AsciiDoc in Javadoc</p>
+      </section>
+      <section class="listing">
+        <pre class="language-java"><code>/**
+ * &lt;p&gt;Sample comments that include {@code source code}.&lt;/p&gt;
+ * &lt;pre&gt;{@code
+ * public class Asciidoclet extends Doclet {
+ *     {@literal @}SuppressWarnings("UnusedDeclaration")
+ *     public static boolean start(RootDoc rootDoc) {
+ *         new Asciidoclet().render(rootDoc);
+ *         return Standard.start(rootDoc);
+ *     }
+ * }
+ * }&gt;/pre&gt;
+ *
+ * @author &lt;a href="https://github.com/johncarl81"&gt;John Ericksen&lt;/a&gt;
+ */
+public class Asciidoclet extends Doclet { ... }</code></pre>
+      </section>
+      <section class="listing">
+        <pre class="language-java"><code>/**
+ * Sample comments that include `source code`.
+ *
+ * [source,java]
+ * public class Asciidoclet extends Doclet {
+ *     @SuppressWarnings("UnusedDeclaration")
+ *     public static boolean start(RootDoc rootDoc) {
+ *         new Asciidoclet().render(rootDoc);
+ *         return Standard.start(rootDoc);
+ *     }
+ * }
+ *
+ * @author https://github.com/johncarl81[John Ericksen]
+ */
+public class Asciidoclet extends Doclet { ... }</code></pre>
+      </section>
+      <section class="listing">
+        <pre><code>/**
+ * Defines an interface as a Transfuse Factory.
+ *
+ * .Example
+ * [source,java]
+ * @Factory
+ * public interface FactoryExample {
+ *     BuildMe build();
+ * }
+ *
+ * @author John Ericksen
+ */
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface Factory {} </code></pre>
+      </section>
+      <section class="poster"><a href="https://oss.sonatype.org/service/local/repositories/releases/archive/org/asciidoctor/asciidoclet/1.5.2/asciidoclet-1.5.2-javadoc.jar/!/org/asciidoctor/Asciidoclet.html"><img src="images/asciidoclet-published.png"></a></section>
+      <section>
+        <h2>Asciidoctor Diagram</h2>
+        <p class="small">Diagrams from plain text</p>
+      </section>
+      <section class="listing">
+        <pre><code>[plantuml, format=svg, alt="Usage"]
+....
+User -> (Start)
+User --> (Use the application) : Label
+
+:Main Admin: ---> (Use the application) : Another label
+....</code></pre>
+      </section>
+      <section style="background-color: #fff"><img src="images/asciidoctor-diagram-sample.svg"></section>
+      <section class="poster"><img src="images/hubpress-screenshot.jpg"></section>
+      <section class="fin">
+        <h2>Write with power!</h2>
+      </section>
+    </article>
+    <script src="build/build.js"></script>
+  </body>
+</html>
