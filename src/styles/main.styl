@@ -68,6 +68,26 @@ p.small
 h2 i.fa
   font-size: 0.75em
   vertical-align: 0.15em
+  color: #404040
+
+h2.subject, h2.reflect
+  line-height: 1
+  margin: 0
+  width: 100%
+h2.reflect
+  border-bottom: 1px solid #404040
+  transform: scaleX(-1) scaleY(-1)
+  opacity: 0.5
+  position: relative
+  &::after
+    background-image: linear-gradient(to bottom, #2b2b2b, transparent)
+    //background-image: linear-gradient(to bottom, rgba(43, 43, 43, 0.9) 35%, transparent 100%)
+    display: block
+    content: ''
+    position: absolute
+    width: 100%
+    margin-top: -1em
+    height: 1em
 
 .shield
   text-align: center

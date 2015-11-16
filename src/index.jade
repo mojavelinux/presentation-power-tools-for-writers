@@ -81,18 +81,27 @@ html
       section.poster
         img(src='images/asciidoctor-chrome-extension.png')
       section
+        h2 Sharing
+      section.poster
+        img(src='images/docgist-screenshot.png')
+      section
         h2 IDE for writers
       section
-        ul
-          li Live preview
+        ul(style='list-style: none; padding: 0; margin: 0; font-size: 1.5em; line-height: 2; font-weight: 300; text-align: right')
+          li Live preview with scroll sync
           li Outline view
           li Code assist
           li Shortcuts for conversion
           li Shortcuts for publishing
+          li ...
+      //section.poster
+      //  a(href='http://asciidocfx.com', target='_blank'): img(src='images/asciidocfx.png')
       section.poster
-        a(href='http://asciidocfx.com', target='_blank'): img(src='images/asciidocfx.png')
-      section
-        h2 Sharing
+        a(href='http://asciidocfx.com', target='_blank'): img(src='images/asciidocfx-screenshot-jhipster.png')
+      section.poster
+        img(src='images/atom-screenshot-jhipster.png')
+      section.poster
+        img(src='images/atom-autocomplete.png')
       section
         //h2 Publishing
         h2 Push to publish
@@ -102,9 +111,8 @@ html
         h2 git <i class="fa fa-arrow-right"></i> Travis CI <i class="fa fa-arrow-right"></i> gh-pages
         // could also deploy to publishing platform
       section
-        h2 Docs review
-        // TODO use reflection
-        h2.mirror Code review
+        h2.subject Docs review
+        h2.reflect Code review
       section.poster
         img(src='images/fork-and-fix.png') 
       section.poster
@@ -133,6 +141,8 @@ html
           ----
           include::{projectdir}/src/spec/test/SyntaxTest.groovy[tag=gstring_1]
           ----
+      section.poster
+        img(src='images/groovy-example.png')
       section
         h2 D.R.Y. with macros
         p.small Good AsciiDoc is concise AsciiDoc
@@ -235,6 +245,8 @@ html
           @Target(ElementType.TYPE)
           @Retention(RetentionPolicy.RUNTIME)
           public @interface Factory {} 
+      section.poster
+        a(href='https://oss.sonatype.org/service/local/repositories/releases/archive/org/asciidoctor/asciidoclet/1.5.2/asciidoclet-1.5.2-javadoc.jar/!/org/asciidoctor/Asciidoclet.html'): img(src='images/asciidoclet-published.png')
       section
         h2 Asciidoctor Diagram
         p.small Diagrams from plain text
