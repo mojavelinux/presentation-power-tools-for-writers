@@ -96,9 +96,10 @@ html
           li Live preview with scroll sync
           li Outline view
           li Code assist
+          li Code templates
           li Shortcuts for conversion
           li Shortcuts for publishing
-          li ...
+          li Inbound conversion
       //section.poster
       //  a(href='http://asciidocfx.com', target='_blank'): img(src='images/asciidocfx.png')
       section.poster
@@ -255,6 +256,17 @@ html
       section
         h2 Asciidoctor Diagram
         p.small Diagrams from plain text
+      section.listing
+        pre: code.
+          [plantuml, format=svg, alt="Usage"]
+          ....
+          User -> (Start)
+          User --> (Use the application) : Label
+          
+          :Main Admin: ---> (Use the application) : Another label
+          ....
+      section(style='background-color: #fff')
+        img(src='images/asciidoctor-diagram-sample.svg')
       section.fin
         h2 Write with power!
     script(src='build/build.js')
