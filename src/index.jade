@@ -20,8 +20,8 @@ html
       section
         h2 Docs <em>=</em> Code!
       section.listing
-        pre: code.
-          = Writing Without Pain
+        pre.language-asciidoc: code.
+          = Write Without Pain
           Author Name &lt;author@example.org&gt;
 
           A paragraph is just a paragraph.
@@ -32,32 +32,78 @@ html
           * Beer
           * Chocolate
           * http://devoxx.be[Devoxx]
+      section.listing
+        pre.language-asciidoc: code.
+          = Document Code Without Pain
+          Author Name &lt;author@example.org&gt;
+
+          Code is a first-class citizen!
+
+          [source,groovy]
+          ----
+          println "AsciiDoc is code friendly!"
+          ----
+
+          TIP: Use the include directive to insert tested code.
+      //FIXME make this an axis slide
+      //section
+      //  h2 Content | Presentation
       section
-        ul(style='list-style: none; padding: 0; margin: 0')
-          li <i class="fa fa-eye"></i> Read
-          li <i class="fa fa-keyboard-o"></i> Edit
-          li <i class="fa fa-git"></i> Version
-          li <i class="fa fa-share-square-o"></i> Collaborate
-          li <i class="fa fa-flask"></i> Publish
+        h2 Write once, publish everywhere
+      section
+        table: tbody: tr
+          td: div.fragment.shield
+            span.icon: i.fa.fa-eye
+            span.text read
+          td: div.fragment.shield
+            span.icon: i.fa.fa-keyboard-o
+            span.text write
+          td: div.fragment.shield
+            span.icon: i.fa.fa-git
+            span.text version
+          td: div.fragment.shield
+            span.icon: i.fa.fa-share-square-o
+            span.text share
+          td: div.fragment.shield
+            span.icon: i.fa.fa-flask
+            span.text publish
+      //section
+      //  ul(style='list-style: none; padding: 0; margin: 0')
+      //    li <i class="fa fa-eye"></i> Read
+      //    li <i class="fa fa-keyboard-o"></i> Edit
+      //    li <i class="fa fa-git"></i> Version
+      //    li <i class="fa fa-share-square-o"></i> Collaborate
+      //    li <i class="fa fa-flask"></i> Publish
       section
         h2 Preview à la carte
+      section.poster
+        img(src='images/asciidoctor-chrome-extension-install.png')
+      section.poster
+        img(src='images/asciidoctor-chrome-extension.png')
       section
         h2 IDE for writers
-        //AsciidocFX
+      section
+        ul
+          li Live preview
+          li Outline view
+          li Code assist
+          li Shortcuts for conversion
+          li Shortcuts for publishing
+      section.poster
+        a(href='http://asciidocfx.com', target='_blank'): img(src='images/asciidocfx.png')
       section
         h2 Sharing
       section
         //h2 Publishing
         h2 Push to publish
       section
-        h2 VCS ⇒ CI ⇒ Live
+        h2 VCS <i class="fa fa-arrow-right"></i> CI <i class="fa fa-arrow-right"></i> Live
       section
-        h2 git ⇒ Travis CI ⇒ gh-pages
+        h2 git <i class="fa fa-arrow-right"></i> Travis CI <i class="fa fa-arrow-right"></i> gh-pages
         // could also deploy to publishing platform
       section
-        h2 Content | Presentation
-      section
         h2 Docs review
+        // TODO use reflection
         h2.mirror Code review
       section.poster
         img(src='images/fork-and-fix.png') 
@@ -68,13 +114,58 @@ html
       section.poster
         img(src='images/hubpress-screenshot.jpg')
       section
-        h2 Diagrams from plain text
+        h2 Code into docs via tests
+      section.listing
+        pre.language-groovy: code.
+          void testGString() {
+            // tag::gstring_1[]
+            def name = 'Guillaume' // a plain string
+            def greeting = "Hello ${name}"
+
+            assert greeting.toString() == 'Hello Guillaume'
+            // end::gstring_1[]
+          }
+      section.listing
+        pre.language-asciidoc: code.
+          Here, we have a string with a placeholder referencing a local variable:
+
+          [source,groovy,indent=0]
+          ----
+          include::{projectdir}/src/spec/test/SyntaxTest.groovy[tag=gstring_1]
+          ----
       section
-        h2 Write once, publish everywhere
+        h2 D.R.Y. with macros
+        p.small Good AsciiDoc is concise AsciiDoc
+      section.listing
+        pre.language-asciidoc: code.
+          [source,java]
+          ----
+          include::{srcdir}/com/example/domain/Person.java[tag=set_name]
+          ----
+      section.listing
+        pre.language-asciidoc: code.
+          source::com.example.domain.Person.java[]
+      section.listing
+        pre.language-asciidoc: code.
+          :source-imports: com.example.domain
+
+          source::Person.java[]
+      section.listing
+        pre.language-asciidoc: code.
+          :source-imports: com.example.domain
+
+          source::Person#setName(String).java[]
+      section.listing
+        pre.language-asciidoc: code.
+          :source-imports: com.example.domain
+
+          source::Person#setName(String).java[opts="+apidoc,-line-comments"]
       section
         h2 Spring REST Docs
+        p.small Accurate & readable documentation for RESTful services
+        // intended to be an easy-to-read user guide, akin to GitHub's API documentation for example, rather than the fully automated, dense API documentation produced by tools like Swagger
       section.listing
-        pre: code.
+        pre.language-java: code.
          @Test
          public void headersExample() throws Exception {
            this.document.snippets(responseHeaders(
@@ -83,7 +174,7 @@ html
            this.mockMvc.perform(get("/")).andExpect(status().isOk());
          }
       section.listing
-        pre.nohighlight: code.
+        pre.language-asciidoc: code.
           [[overview-headers]]
           == Headers
 
@@ -92,6 +183,41 @@ html
           include::{snippets}/headers-example/response-headers.adoc[] 
       section
         h2 Asciidoclet
+        p.small AsciiDoc in Javadoc
+      section.listing
+        pre.language-java: code.
+          /**
+           * &lt;p&gt;Sample comments that include {@code source code}.&lt;/p&gt;
+           * &lt;pre&gt;{@code
+           * public class Asciidoclet extends Doclet {
+           *     {@literal @}SuppressWarnings("UnusedDeclaration")
+           *     public static boolean start(RootDoc rootDoc) {
+           *         new Asciidoclet().render(rootDoc);
+           *         return Standard.start(rootDoc);
+           *     }
+           * }
+           * }&gt;/pre&gt;
+           *
+           * @author &lt;a href="https://github.com/johncarl81"&gt;John Ericksen&lt;/a&gt;
+           */
+          public class Asciidoclet extends Doclet { ... }
+      section.listing
+        pre.language-java: code.
+          /**
+           * Sample comments that include `source code`.
+           *
+           * [source,java]
+           * public class Asciidoclet extends Doclet {
+           *     @SuppressWarnings("UnusedDeclaration")
+           *     public static boolean start(RootDoc rootDoc) {
+           *         new Asciidoclet().render(rootDoc);
+           *         return Standard.start(rootDoc);
+           *     }
+           * }
+           *
+           * @author https://github.com/johncarl81[John Ericksen]
+           */
+          public class Asciidoclet extends Doclet { ... }
       section.listing
         pre: code.
           /**
@@ -110,7 +236,8 @@ html
           @Retention(RetentionPolicy.RUNTIME)
           public @interface Factory {} 
       section
-        h2 ...
+        h2 Asciidoctor Diagram
+        p.small Diagrams from plain text
       section
         h2 Write with power!
     script(src='build/build.js')

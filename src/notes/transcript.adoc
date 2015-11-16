@@ -17,4 +17,33 @@ ifeval::["{toc-placement}" == "macro"]
 toc::[]
 endif::[]
 
-...
+Today, we're going to survey several tools that are available (and some that are still a work in progress) to make writing documentation and other content easier.
+I believe documentation is an engineering problem, but in many cases it isn't being treated that way.
+Hopefully, we'll give you some ideas about how to apply your engineering skillset to integrate content creation into your development workflow and get more out of your content.
+
+When you think of power tools for writing, what's the first thing that comes to mind.
+Perhaps WYSIWYG?
+I encourage you not leap straight to WYSIWYG.
+That's uninspired thinking.
+Why?
+First, it's rarely “What You See Is What You Get.”
+Instead, it's more like “You Get What You Get.”
+It's either generating a lot of garbage underneath or you're fighting with it to understand what you are trying to achieve.
+Lot's of clicky, clicky.
+
+But the real problem is that the docs live in another world.
+A world that is foreign to most developers and far from the tools you can use to manipulate it.
+The way I like to explain it is that the code you write doesn't run in production in raw form, but rather first packaged and often compiled.
+Very important steps happens in between writing the source and deploying it.
+These steps add value (validation, decoration, optimization, etc).
+Docs can stand to gain from these same processes.
+
+AsciiDoc treats a document as source code.
+Sentences on lines by themselves.
+Special characters to indicate built-in functionality.
+Blocks to group content.
+Extensible macros to add new functionality.
+
+Truly separates content from presentation, similar in spirit to the MVC pattern.
+This allows you to write once and publish everywhere.
+Reuse, remix and repurpose the content.
