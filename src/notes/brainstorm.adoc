@@ -1,10 +1,17 @@
 use the demos to make the point about why the tool exists; why it's needed; what purpose it serves / need it fills
 
+* Documentation journey
+* Make documentation something of value
+* Writing high-quality documentation is difficult
+* Writing can be intimidating
+* Writing documentation is often a long and painful process
+* Writing documentation often gets shortchanged
+* One way to ease that difficulty is to use tools that are well-suited to the job
 * Writers need tools too
 * Let's not leap right to WYSIWYG; that's uninspired thinking (we're going to present some better approaches)
 * What tools do writers really need?
-* What gets in their way?
-* What would remove obstacles that they have?
+* What gets in the way of writing?
+* What would remove obstacles in the writing process?
 * One way to approach the problem is relating writing to coding
 * *Collaboration* is critical for writers, even more so than coding
 * *Versioning* is a critical component of collaboration
@@ -19,11 +26,8 @@ use the demos to make the point about why the tool exists; why it's needed; what
 * Build confidence by showing a preview of how the writing will look when published
 * Use icons and other devices to make writing fun; can be easily purged from final version
 * When writers are writing, they shouldn't be worried about formatting and in some cases structure or organization
-* Writing can be intimidating
-* Writing documentation is often a long and painful process
-* Documentation often gets shortchanged
 * *Documentation (and the documentation source) needs to be a bridge to the project developers / leaders*
-* Make documentation something of value
+* Use snippets produced by tests for the technical documentation
 * Reward the writer
 * *Simplify publishing*
 * Little improvements each day become big improvements over a long period
@@ -32,10 +36,11 @@ use the demos to make the point about why the tool exists; why it's needed; what
 * Portable content
 * *Separate content and presentation* (MVC pattern)
 * Mobile first!
-* Move the content to where it can be shared and in a format conducive to collaborating
+* Move the content to where it can be shared (and versioned) and in a format conducive to collaborating
 * Treat all content this way (slides, API docs, etc), not just documentation / manuals
 * GitHub has a very powerful diff feature that presents both a source diff view and a rich diff view
 * Put the documentation next to the code (in the same git repo) or in a parallel git repo; benefits/drawbacks to each approach
+* Leverage automation; let go of the manual controls
 * What makes a good writer's IDE? see http://wolandscat.net/2015/10/28/an-asciidoctor-ide-wish-list/
 * Many tools are going to be needed, so Asciidoctor runs on many platforms (Ruby, JVM, JavaScript/Browser, Node, etc)
 * Publishing is sometimes messy; need to move a lot of things around; a good build tool like Gradle can rise to the challenge
@@ -44,8 +49,14 @@ use the demos to make the point about why the tool exists; why it's needed; what
 * The language must be extensible to conform to the world around us; new frontiers
 * *Give documentation the same treatment and respect as code*
 * *Automate!!*
+* Accurate
 * Approachable (more important than readable)
 * Metadata (to enable things like the reveal.js output)
+* Publishing is also about discovery; need to trace back to the source
+* *Documentation Architecture*
+* Have the tests be involved in the documentation process
+* _Documentation needs to be part of the team & source code from the beginning_; part of solution you are delivering
+* Test the facts that are headed from the test suite towards the documentation
 
 == Narrative
 
@@ -70,9 +81,66 @@ use the demos to make the point about why the tool exists; why it's needed; what
 * GitHub for simple publishing; Docgist to get proper rendering
 * Static site generator to manage an AsciiDoc-based content site (Jekyll, Awestruct, Middleman)
 * Build tool plugins to integrate documentation directly into a software project (Gradle, Maven)
-* AsciiDoc in API docs using Asciidoclet, swagger2markup or Spring RESTdocs
+* AsciiDoc in API docs using Asciidoclet, swagger2markup or Spring RESTdocs; *accurate* & readable
 * To specifically create a blog, use HubPress.io
 * Create and store diagrams as code using Asciidoctor Diagram
 * Produce EPUB3 and PDF using Asciidoctor PDF
 * Customize the output using a custom converter or other extensions
 * Create a Bespoke.js or Reveal.js presentation using AsciiDoc to HTML5 slideshow converters
+
+[source,java]
+----
+package com.company.model;
+
+public class Person {
+  // ...
+
+  /**
+   * Foobar foobar
+   */
+  public String getName() {
+    // this method is primative
+    return "John";
+  }
+}
+----
+
+[source,java]
+----
+include::src/main/java/Person.java[]
+----
+
+source::src/main/java/Person.java[]
+
+:source-import: com.company.model as model
+
+src::model.Person#getName(String).java[opts="+apidoc,-comments"]
+
+---
+
+[source,java]
+----
+@Test
+public void headersExample() throws Exception {
+  this.document.snippets(
+      responseHeaders(
+          headerWithName("Content-Type")
+              .description("The Content-Type of the payload, e.g. `application/hal+json`")));
+
+  this.mockMvc.perform(get("/")).andExpect(status().isOk());
+}
+----
+
+[source,asciidoc]
+----
+[[overview-headers]]
+== Headers
+
+Every response has the following header(s):
+
+\include::{snippets}/headers-example/response-headers.adoc[]
+----
+
+javaee7-samples for Asciidoclet + literate programming
+
+

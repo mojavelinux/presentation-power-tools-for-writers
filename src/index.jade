@@ -11,6 +11,28 @@ html
         h1 Power Tools for Writers
         p.author Guillaume Scheibel &middot; Dan Allen
       section
+        h2 W.Y.S.I.W.Y.G ?
+        //p.small What You See Is What You Get
+        p.small You Get What You Get :/
+      //section
+      //  h2 Y.G.W.Y.G
+      //  p.small You Get What You Get
+      section
+        h2 Docs <em>=</em> Code!
+      section.listing
+        pre: code.
+          = Writing Without Pain
+          Author Name &lt;author@example.org&gt;
+
+          A paragraph is just a paragraph.
+          No pain involved.
+
+          == Belgium in a nutshell
+
+          * Beer
+          * Chocolate
+          * http://devoxx.be[Devoxx]
+      section
         ul(style='list-style: none; padding: 0; margin: 0')
           li <i class="fa fa-eye"></i> Read
           li <i class="fa fa-keyboard-o"></i> Edit
@@ -18,23 +40,75 @@ html
           li <i class="fa fa-share-square-o"></i> Collaborate
           li <i class="fa fa-flask"></i> Publish
       section
-        h2 À la carte preview
+        h2 Preview à la carte
       section
-        h2 A writer’s IDE
+        h2 IDE for writers
+        //AsciidocFX
       section
         h2 Sharing
       section
-        h2 Publishing
+        //h2 Publishing
+        h2 Push to publish
       section
-        h2 Docs = Code!
+        h2 VCS ⇒ CI ⇒ Live
+      section
+        h2 git ⇒ Travis CI ⇒ gh-pages
+        // could also deploy to publishing platform
+      section
+        h2 Content | Presentation
+      section
+        h2 Docs review
+        h2.mirror Code review
       section.poster
         img(src='images/fork-and-fix.png') 
+      section.poster
+        img(src='images/code-diff.png')
+      section.poster
+        img(src='images/rich-diff.png')
       section.poster
         img(src='images/hubpress-screenshot.jpg')
       section
         h2 Diagrams from plain text
       section
         h2 Write once, publish everywhere
+      section
+        h2 Spring REST Docs
+      section.listing
+        pre: code.
+         @Test
+         public void headersExample() throws Exception {
+           this.document.snippets(responseHeaders(
+               headerWithName("Content-Type")
+                   .description("The payload MIME type")));
+           this.mockMvc.perform(get("/")).andExpect(status().isOk());
+         }
+      section.listing
+        pre.nohighlight: code.
+          [[overview-headers]]
+          == Headers
+
+          Every response has the following header(s):
+
+          include::{snippets}/headers-example/response-headers.adoc[] 
+      section
+        h2 Asciidoclet
+      section.listing
+        pre: code.
+          /**
+           * Defines an interface as a Transfuse Factory.
+           *
+           * .Example
+           * [source,java]
+           * @Factory
+           * public interface FactoryExample {
+           *     BuildMe build();
+           * }
+           *
+           * @author John Ericksen
+           */
+          @Target(ElementType.TYPE)
+          @Retention(RetentionPolicy.RUNTIME)
+          public @interface Factory {} 
       section
         h2 ...
       section

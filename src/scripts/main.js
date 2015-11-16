@@ -8,6 +8,7 @@ var bespoke = require('bespoke'),
   nav = require('bespoke-nav'),
   overview = require('bespoke-overview'),
   scale = require('bespoke-scale'),
+  highlightjs = require('highlight.js'),
   isWebKit = 'webkitAppearance' in document.documentElement.style;
 
 var deck = bespoke.from('.deck', [
@@ -24,3 +25,5 @@ var deck = bespoke.from('.deck', [
 
 // expose deck API to applications
 window.deck = deck;
+
+highlightjs.initHighlighting();
