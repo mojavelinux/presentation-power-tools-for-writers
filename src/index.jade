@@ -11,9 +11,9 @@ html
         h1 Power Tools for Writers
         p.author Guillaume Scheibel &middot; Dan Allen
       section
-        h2 W.Y.S.I.W.Y.G ?
+        h2.fragment W.Y.S.I.W.Y.G ?
         //p.small What You See Is What You Get
-        p.small You Get What You Get :/
+        p.fragment.small You Get What You Get :/
       //section
       //  h2 Y.G.W.Y.G
       //  p.small You Get What You Get
@@ -46,12 +46,16 @@ html
 
           TIP: Use the include directive to insert tested code.
       //FIXME make this an axis slide
-      //section
-      //  h2 Content | Presentation
+      section(style='flex-direction: row')
+        div.left(style='padding: 0 1.5em; border-right: 1px solid #eee')
+          h2 Content
+        div.right(style='padding: 0 1.5em')
+          h2 Presentation
       section
-        h2 Write once, publish everywhere
+        h2 Write in AsciiDoc, publish everywhere
+        //h2 Write once, publish everywhere
       section
-        table: tbody: tr
+        table.fragment: tbody: tr
           td: div.fragment.shield
             span.icon: i.fa.fa-eye
             span.text read
@@ -88,6 +92,7 @@ html
         h2 IDE for writers
       section
         ul(style='list-style: none; padding: 0; margin: 0; font-size: 1.5em; line-height: 2; font-weight: 300; text-align: right')
+          // TODO use charred path here
           li Live preview with scroll sync
           li Outline view
           li Code assist
@@ -103,10 +108,10 @@ html
       section.poster
         img(src='images/atom-autocomplete.png')
       section
-        //h2 Publishing
         h2 Push to publish
       section
         h2 VCS <i class="fa fa-arrow-right"></i> CI <i class="fa fa-arrow-right"></i> Live
+      // TODO use reflection here
       section
         h2 git <i class="fa fa-arrow-right"></i> Travis CI <i class="fa fa-arrow-right"></i> gh-pages
         // could also deploy to publishing platform
@@ -250,6 +255,6 @@ html
       section
         h2 Asciidoctor Diagram
         p.small Diagrams from plain text
-      section
+      section.fin
         h2 Write with power!
     script(src='build/build.js')

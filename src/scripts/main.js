@@ -1,5 +1,5 @@
 var bespoke = require('bespoke'),
-  //bullets = require('bespoke-bullets'),
+  bullets = require('bespoke-bullets'),
   classes = require('bespoke-classes'),
   cursor = require('bespoke-cursor'),
   forms = require('bespoke-forms'),
@@ -18,6 +18,7 @@ var deck = bespoke.from('.deck', [
   fullscreen(),
   overview(),
   //bullets('li, .bullet'),
+  bullets('.fragment'),
   hash(),
   //cursor(),
   forms()
