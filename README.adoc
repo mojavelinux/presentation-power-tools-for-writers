@@ -1,5 +1,5 @@
 = Power Tools for Writers
-Guillaume Scheibel; Dan Allen <http://opendevise.io>
+Guillaume Scheibel <https://twitter.com/g_scheibel[@g_scheibel]>; Dan Allen <http://opendevise.io>
 :track: Agility, Methodology & Tests
 
 [abstract]
@@ -27,9 +27,11 @@ Using these tools, you can write like a demigod too.
 //end::abstract[]
 --
 
-////
 == View online
 
+http://mojavelinux.github.io/presentation-power-tools-for-writers/index.html[Slides]
+
+////
 ...[Video]
 &middot;
 http://mojavelinux.github.io/presentation-power-tools-for-writers/index.html[Slides]
