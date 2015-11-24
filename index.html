@@ -51,7 +51,7 @@ TIP: Use the include directive to insert tested code.</code></pre>
       </section>
       <!--FIXME make this an axis slide-->
       <section style="flex-direction: row">
-        <div style="padding: 0 1.5em; border-right: 1px solid #eee" class="left">
+        <div style="padding: 0 1.5em; border-right: 1px solid #71ebf4" class="left">
           <h2>Content</h2>
         </div>
         <div style="padding: 0 1.5em" class="right">
@@ -59,7 +59,7 @@ TIP: Use the include directive to insert tested code.</code></pre>
         </div>
       </section>
       <section>
-        <h2>Write in AsciiDoc, publish everywhere</h2>
+        <h2>Write in AsciiDoc,<br>publish everywhere</h2>
         <!--h2 Write once, publish everywhere-->
       </section>
       <section>
@@ -162,8 +162,8 @@ include::{projectdir}/src/spec/test/SyntaxTest.groovy[tag=gstring_1]
       </section>
       <section class="poster"><img src="images/groovy-example.png"></section>
       <section>
-        <h2>D.R.Y. with macros</h2>
-        <p class="small">Good AsciiDoc is concise AsciiDoc</p>
+        <h2 class="fragment">D.R.Y. with macros</h2>
+        <p class="fragment small">Good AsciiDoc is concise AsciiDoc</p>
       </section>
       <section class="listing">
         <pre class="language-asciidoc"><code>[source,java]
@@ -249,23 +249,23 @@ public class Asciidoclet extends Doclet { ... }</code></pre>
  */
 public class Asciidoclet extends Doclet { ... }</code></pre>
       </section>
-      <section class="listing">
-        <pre><code>/**
- * Defines an interface as a Transfuse Factory.
- *
- * .Example
- * [source,java]
- * @Factory
- * public interface FactoryExample {
- *     BuildMe build();
- * }
- *
- * @author John Ericksen
- */
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-public @interface Factory {} </code></pre>
-      </section>
+      <!--section.listing-->
+      <!--  pre: code.-->
+      <!--    /**-->
+      <!--     * Defines an interface as a Transfuse Factory.-->
+      <!--     *-->
+      <!--     * .Example-->
+      <!--     * [source,java]-->
+      <!--     * @Factory-->
+      <!--     * public interface FactoryExample {-->
+      <!--     *     BuildMe build();-->
+      <!--     * }-->
+      <!--     *-->
+      <!--     * @author John Ericksen-->
+      <!--     */-->
+      <!--    @Target(ElementType.TYPE)-->
+      <!--    @Retention(RetentionPolicy.RUNTIME)-->
+      <!--    public @interface Factory {} -->
       <section class="poster"><a href="https://oss.sonatype.org/service/local/repositories/releases/archive/org/asciidoctor/asciidoclet/1.5.2/asciidoclet-1.5.2-javadoc.jar/!/org/asciidoctor/Asciidoclet.html"><img src="images/asciidoclet-published.png"></a></section>
       <section>
         <h2>Asciidoctor Diagram</h2>
